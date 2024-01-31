@@ -1,5 +1,35 @@
-.inputFieldDiv {
+body {
+  margin: 0;
 
-    text-align: center;
-    
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/23/15/23/cosmos-1853491_1280.jpg);
+}
+
+.inputFieldDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.searchButton {
+  background-color: white;
+  border: 0;
+  margin-left: 1%;
+  border-radius: 5%;
+  justify-content: center;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  background-color: rgb(211, 211, 211);
+}
+
+.searchButton:active {
+  background-color: rgb(158, 158, 158);
+}
+
+.Heading {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+
+  font-size: 50px;
 }
