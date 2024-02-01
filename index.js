@@ -13,6 +13,8 @@ async function sendApiRequest() {
 
   let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${APIKey}`);
   console.log(response);
+  let data = await response.json()
+  console.log(data)
 }
 
 function useApiData(data){
