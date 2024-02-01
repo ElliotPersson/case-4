@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-.searchButton {
+#searchButton {
   background-color: white;
   border: 0;
   margin-left: 1%;
@@ -17,12 +17,12 @@ body {
   justify-content: center;
 }
 
-.searchButton:hover {
+#searchButton:hover {
   cursor: pointer;
   background-color: rgb(211, 211, 211);
 }
 
-.searchButton:active {
+#searchButton:active {
   background-color: rgb(158, 158, 158);
 }
 
