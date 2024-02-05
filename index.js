@@ -1,3 +1,17 @@
+
+
+const hamburgerMenu = document.querySelector(".hamburgerMenu");
+
+const offScreenMenu = document.querySelector(".offScreenMenu")
+
+hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("active");
+  offScreenMenu.classList.toggle("active");
+  
+})
+
+
+
 let searchButton = document.querySelector("#searchButton");
 
 //eventlistener to button that runs sendApiRequest function when clicked.
