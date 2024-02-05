@@ -109,14 +109,16 @@ nav{
 }
 .inputField{
   font-size: 1.5rem;
-border-radius: 15px;
+border-radius: 5px;
+border: 0;
 
 }
 #searchButton {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 0;
   margin-left: 1%;
   border-radius: 5%;
+  
   
 }
 
@@ -133,5 +135,10 @@ border-radius: 15px;
 #searchButton:active {
   background-color: rgb(158, 158, 158);
 }
+
+
+
+
+
 
 
