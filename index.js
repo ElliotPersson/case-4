@@ -1,5 +1,5 @@
 
-
+//Hamburger menu:
 const hamburgerMenu = document.querySelector(".hamburgerMenu");
 
 const offScreenMenu = document.querySelector(".offScreenMenu")
@@ -11,7 +11,7 @@ hamburgerMenu.addEventListener("click", () => {
 })
 
 
-
+//Apod:
 let searchButton = document.querySelector("#searchButton");
 
 //eventlistener to button that runs sendApiRequest function when clicked.
@@ -38,3 +38,7 @@ async function sendApiRequest() {
 function useApiData(data){
 document.querySelector(".image").innerHTML += `<img src="${data.url}">`
 }
+
+
+
+

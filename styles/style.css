@@ -194,3 +194,18 @@ margin: 5%;
   
 }
 
+.marsDivButton{
+  display: flex;
+  justify-content: center;
+}
+
+.headingMars{
+  color: white;
+  text-align: center  ;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.marsDivCheckbox{
+display: flex;
+justify-content: center;
+}
