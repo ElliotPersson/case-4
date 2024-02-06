@@ -166,4 +166,15 @@ margin: 0;
 }
 
 
+.image{
+  border: 10px, rgb(197, 237, 1), solid;
+}
+img{
+margin: 5%;
+  width: 60%;
+  height: 110px;
+  object-fit: cover; 
 
+  
+  
+}
