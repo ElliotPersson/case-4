@@ -11,16 +11,19 @@ hamburgerMenu.addEventListener("click", () => {
 
 
 
-let searchButton = document.querySelector("#searchButtonLibrary");
-let inputField = document.querySelector("#planet")
+document.querySelector("#searchButtonLibrary").addEventListener("click",getFetch)
 
+function getFetch(){
+    const inputField = document.querySelector("input").value
+    const url =`https://images-api.nasa.gov/search?q={q}${inputField}`
+fetch(url)
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+})
 
+}
 
-searchButton.addEventListener("click", () => {
-  console.log("You clicked the button");
-  
-
-});
 
 
 
