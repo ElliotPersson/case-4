@@ -22,7 +22,7 @@ fetch(url)
   
   console.log(data)
 
-  const rover = data.photos
+  const rover = data.photos.filter((item) => item.camera.name.includes("RHAZ"))
 const output = rover
   .map(item => 
     `<img src="${item.img_src}">`
