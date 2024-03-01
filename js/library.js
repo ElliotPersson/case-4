@@ -15,11 +15,13 @@ document.querySelector("#searchButtonLibrary").addEventListener("click",getFetch
 
 function getFetch(){
     const inputField = document.querySelector("input").value
-    const url =`https://images-api.nasa.gov/search?q={q}${inputField}`
+    const url =`https://images-api.nasa.gov/search?q=${inputField}`
 fetch(url)
 .then(res => res.json())
 .then(data => {
-    console.log(data)
+   
+  const library = data.collection.items
+    console.log(library)
 })
 
 }
