@@ -1,6 +1,5 @@
 //Hamburger menu:
 const hamburgerMenu = document.querySelector(".hamburgerMenu");
-
 const offScreenMenu = document.querySelector(".offScreenMenu");
 
 hamburgerMenu.addEventListener("click", () => {
@@ -8,105 +7,60 @@ hamburgerMenu.addEventListener("click", () => {
   offScreenMenu.classList.toggle("active");
 });
 
+//API setup:
+const API_KEY = "wj75V8DCvyHdQaZHLukFXkQWXDCS4iZ8GxHJgYPW";
+const SOL = 1000;
+const ROVER = "curiosity";
+const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${ROVER}/photos?sol=${SOL}&api_key=${API_KEY}`;
+
+const searchBtn = document.querySelector(".marsButton");
+const photosContainer = document.querySelector(".marsPhotos");
 
 
-const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=wj75V8DCvyHdQaZHLukFXkQWXDCS4iZ8GxHJgYPW"
-    
+searchBtn.addEventListener("click", async () => {
+  
+ //get checked camera values:
+  const selected = Array.from(
+    document.querySelectorAll('input[name="camera"]:checked')
+  ).map(cb => cb.value);
+
+  if (!selected.length) {
+    photosContainer.innerHTML = "<p class='error'>Please select at least one camera.</p>";
+    return;
+  }
 
   
+  try {
+    const res = await fetch(url);
+    const { photos } = await res.json();
 
-fetch(url)
-.then(res => res.json()) 
-.then(data =>{
+    // filter by selected camersas:
+    const filtered = photos.filter(p => selected.includes(p.camera.name));
+    if (!filtered.length) {
+      photosContainer.innerHTML = "<p class='error'>No photos for that selection.</p>";
+      return;
+    }
+
+  // render photos:
+    photosContainer.innerHTML = filtered
+      .map(p => `
+        <figure class="photo-card">
+          <img src="${p.img_src}" alt="${p.camera.full_name}">
+          <figcaption>
+            <strong>${p.camera.name}</strong><br>
+            ${p.earth_date}
+          </figcaption>
+        </figure>
+      `).join("");
+  } catch (err) {
+
+    // Errors if fetch fails:
+    console.error(err);
+    photosContainer.innerHTML = "<p class='error'>Failed to load photos.</p>";
+  }
+});
 
   
-
-
-  
-  console.log(data)
-  let cb1 = document.querySelector("#cb1");
-cb1.addEventListener("click", () => {
-
-  cb1 = data.photos.filter((item) => item.camera.name.includes("FHAZ"))
-const output = cb1
-  .map(item => 
-    `<img src="${item.img_src}">`
-  ).join("")
-  
-
-
-  document.querySelector(".marsPhotos").innerHTML = output
-
-
-})
-
-
-let cb2 = document.querySelector("#cb2");
-cb2.addEventListener("click", () => {
-
-  cb2 = data.photos.filter((item) => item.camera.name.includes("RHAZ"))
-const output = cb2
-  .map(item => 
-    `<img src="${item.img_src}">`
-  ).join("")
-  
-
-
-  document.querySelector(".marsPhotos").innerHTML = output
-
-
-})
-
-let cb3 = document.querySelector("#cb3");
-cb3.addEventListener("click", () => {
-
-  cb3 = data.photos.filter((item) => item.camera.name.includes("MAST"))
-const output = cb3
-  .map(item => 
-    `<img src="${item.img_src}">`
-  ).join("")
-  
-
-
-  document.querySelector(".marsPhotos").innerHTML = output
-
-
-})
-
-let cb4 = document.querySelector("#cb4");
-cb4.addEventListener("click", () => {
-
-  cb4 = data.photos.filter((item) => item.camera.name.includes("CHEMCAM"))
-const output = cb4
-  .map(item => 
-    `<img src="${item.img_src}">`
-  ).join("")
-  
-
-
-  document.querySelector(".marsPhotos").innerHTML = output
-
-
-})
-
-let cb5 = document.querySelector("#cb5");
-cb5.addEventListener("click", () => {
-
-  cb5 = data.photos.filter((item) => item.camera.name.includes("NAVCAM"))
-const output = cb5
-  .map(item => 
-    `<img src="${item.img_src}">`
-  ).join("")
-  
-
-
-  document.querySelector(".marsPhotos").innerHTML = output
-
-
-})
-
-})
-
 
   /* function result(){
     .map((item)) => {
@@ -114,3 +68,7 @@ const output = cb5
     }
   } */
 /*   .filter((item) => item.camera.name.includes("RHAZ")) */
+
+
+
+

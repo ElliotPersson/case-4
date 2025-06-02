@@ -14,7 +14,7 @@
     <ul>
         <a href="apod.html"><li>APOD</li>
             <a href="mars.html"><li>Mars rover photos</li>
-                <a href="library.html"><li>Image and video library</li>    </ul>
+                <a href="library.html"><li>Image library</li>    </ul>
 </div>
 
 
@@ -30,40 +30,43 @@
 </nav>
 <div>
     <h1 class="headingMars">Mars rover photos</h1>
+    <p class="infoMars">Here you can look at photos taken by mars rover cameras! Select a camera or multiple and click <strong>search</strong></p>
 </div>
 
-<div class="checkBoxContainer">
-<input type="checkbox" id="cb1">
-<label for="cb1">FHAZ</label>
-</div>
+<form id="marsForm">
 
-<div class="checkBoxContainer">
-<input type="checkbox" id="cb2">;
-<label for="cb2">RHAZ</label>
-</div>
+    <div class="checkBoxContainer">
+    <input type="checkbox" id="cb1" value="FHAZ" name="camera">
+    <label for="cb1">FHAZ</label>
+    </div>
 
-<div class="checkBoxContainer">
-<input type="checkbox" id="cb3">;
-<label for="cb3">MAST</label>
-</div>
+    <div class="checkBoxContainer">
+    <input type="checkbox" id="cb2" value="RHAZ" name="camera">;
+    <label for="cb2">RHAZ</label>
+    </div>
 
-<div class="checkBoxContainer">
-<input type="checkbox" id="cb4">
-<label for="cb4">CHEMCAM</label>
-</div>
+    <div class="checkBoxContainer">
+    <input type="checkbox" id="cb3" value="MAST" name="camera">;
+    <label for="cb3">MAST</label>
+    </div>
 
-<div class="checkBoxContainer">
-<input type="checkbox" id="cb5">
-<label for="cb7">NAVCAM</label>
-</div>
+    <div class="checkBoxContainer">
+    <input type="checkbox" id="cb4" value="CHEMCAM" name="camera">
+    <label for="cb4">CHEMCAM</label>
+    </div>
+
+    <div class="checkBoxContainer">
+    <input type="checkbox" id="cb5" value="NAVCAM" name="camera">
+    <label for="cb7">NAVCAM</label>
+    </div>
 
 
  
-<div class="marsDivButton">
-    <button class="marsButton">Search</button>
+    <div class="marsDivButton">
+        <button type="button" class="marsButton">Search</button>
        
     </div>
-
+</form>
 <div class="marsPhotos">
 
 </div>

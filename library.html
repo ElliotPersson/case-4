@@ -1,52 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Case 4</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles/style.css" />
+  <title>Case 4 - Image Library</title>
 </head>
 <body>
-
-
-<div class="offScreenMenu">
+  <div class="offScreenMenu">
     <ul>
-        <a href="apod.html"><li>APOD</li>
-            <a href="mars.html"><li>Mars rover photos</li>
-            <a href="library.html"><li>Image and video library</li>
+      <a href="apod.html"><li>APOD</li></a>
+      <a href="mars.html"><li>Mars rover photos</li></a>
+      <a href="library.html"><li>Image and video library</li></a>
     </ul>
-</div>
+  </div>
 
-
-<nav>
+  <nav>
     <a class="heading-nasaAPI" href="index.html">NASA API</a>
     <div class="hamburgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-    
+      <span></span><span></span><span></span>
     </div>
+  </nav>
+
+  <h1 class="case4">Image Library</h1>
+
+  <form id="libraryForm">
+    <input type="text" id="planet" placeholder="search for a planet" />
     
-</nav>
+    <input type="button" id="searchButtonLibrary" value="Search" />
+  </form>
 
+  <div class="searchResults"></div>
 
-   <h1 class="case4">Welcome</h1>
-
- <form id="libraryForm">
-    <input type="text" id="planet" placeholder="search for a planet" >
-    <input type="button" id="searchButtonLibrary" value="Search">
-</form>
- 
-<div class="searchResults">
-
-</div>
-
-<footer class="footer">
-
-</footer>
-
-<script src="js/library.js">
-
-</script>
+  <footer class="footer"></footer>
+  
+  <script src="js/library.js"></script>
 </body>
 </html>
